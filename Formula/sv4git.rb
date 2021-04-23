@@ -13,9 +13,12 @@ class Sv4git < Formula
         ENV["GOPATH"] = buildpath
         (buildpath/"src/github.com/bvieira/sv4git").install buildpath.children
         cd "src/github.com/bvieira/sv4git" do
-        system "make", "build"
-        bin.install "bin/local/darwin/amd64/git-sv"
-        prefix.install_metafiles
+            ENV["BUILDOS"] = "darwin"
+            ENV["BUILDARCH"] = "amd64"
+            ENV["VERSION"] = "2.2.1"
+            system "make", "build"
+            bin.install "bin/local/darwin_amd64/git-sv"
+            prefix.install_metafiles
         end
     end
 
