@@ -17,7 +17,7 @@ class Sv4git < Formula
             ENV["BUILDARCH"] = "amd64"
             ENV["VERSION"] = "2.2.1"
             system "make", "build"
-            bin.install "bin/local/darwin_amd64/git-sv"
+            bin.install "bin/darwin_amd64/git-sv"
             prefix.install_metafiles
         end
     end
