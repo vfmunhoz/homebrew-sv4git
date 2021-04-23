@@ -14,7 +14,7 @@ class Sv4git < Formula
         (buildpath/"src/github.com/bvieira/sv4git").install buildpath.children
         cd "src/github.com/bvieira/sv4git" do
         system "make", "build"
-        bin.install "bin/local/git-sv"
+        bin.install "bin/darwin/amd64/local/git-sv"
         prefix.install_metafiles
         end
     end
